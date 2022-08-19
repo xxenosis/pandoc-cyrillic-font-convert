@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+if [[ $# -eq 0 ]] ; then
+    echo 'Usage: $ ./convert source-file-name.md output-file-name.pdf'
+    exit 1
+fi
+
+#export TIMESTAMP
+TIMESTAMP=$(date +"%H-%M-%S")
+WORKSPACE=/etc/convert
+
+echo "$TIMESTAMP"
+docker run --rm \
+  -v "$(pwd)"/:"$WORKSPACE"/ pandoc-cyrillic-convert \
+  pandoc \
+  -d "$WORKSPACE"/config.yaml \
+  -o "$WORKSPACE"/"$2" \
+  "$WORKSPACE"/"$1"

@@ -1,0 +1,21 @@
+---
+pdf-engine: xelatex # global cyrillic-capability engine
+
+# (optional)
+#toc: true # insert heading 'table-of-content'?
+#toc-depth: 2 # level of section to include in table of contents
+
+variables:
+  geometry: # border styles
+    - a4paper # page format
+    - left=20mm
+    - right=20mm
+    - top=20mm
+    - bottom=20mm
+  mainfont: "MTSSans-Regular.otf"
+  mainfontoptions:
+    - "BoldFont=MTSSans-Bold.otf"
+    - "ItalicFont=MTSSans-Regular.otf"
+    - "BoldItalicFont=MTSSans-Bold.otf"
+  monofont: "CascadiaCode-Regular.ttf"
+  linkcolor: red
